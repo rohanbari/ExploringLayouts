@@ -1,6 +1,7 @@
 package com.rohanbari.exploringlayouts;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,5 +15,10 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
+
+        binding.calendarView.setOnDateChangeListener(
+                (calendarView, i, i1, i2) -> Toast.makeText(getApplicationContext(),
+                        "You have changed the date.",
+                        Toast.LENGTH_SHORT).show());
     }
 }
